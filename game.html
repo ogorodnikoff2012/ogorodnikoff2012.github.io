@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Game</title>
+        <meta charset='utf-8' />
+        <style type="text/css">
+            body {
+                /*background: url(hhh.png); /* Путь к фоновому рисунку */
+                background-color: rgba(135, 169, 72, 0.59);
+                /*background-position: center center;
+                background-size: cover; /* Масштабируем фон */
+            }
+        </style>
+    </head>
+    <body>
+        <table align="center">
+		<tr>
+		<td>
+        	<div style="overflow:scroll;" id="fieldWrapper">
+				<canvas id="field">Refresh</canvas>
+            </div>
+		</td>
+		<td rowspan="2">
+			<div style="overflow:scroll;" id="availableCommands"> 
+            </div>
+		</td>
+		</tr>
+		<tr>
+		<td>
+		</td>
+		</tr>
+		</table>
+		<script src="lib/lib.js"></script>
+		<script src="lib/cell.js"></script>
+		<script src="lib/actor.js"></script>
+        <script src="lib/program.js"></script>
+		<script src="lib/field.js"></script>
+		<script>
+			var l = get("level");
+			loadJS("lib/levels/level_"+l+".js");
+			loadJS("start.js");
+		</script>
+    </body>
+</html>

@@ -9,3 +9,4 @@ programDiv.style.height = 20 + 64;
 loadAvailableCommands();
 loadDragAndDrop();
 initControls();
+level.loadData();

@@ -1,55 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Dragonfly</title>
- 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Dragonfly</title>
+    <style type="text/css">
+        h1 {
+            font-size: 500%;
+            font-style: italic;
+        }
 
- 
- <style type="text/css">
- 
- h1 {
- 
- font-size: 500%;
- font-style: italic;
- 
- }
-body {
-       background: url(fon.jpg) no-repeat;
-	   background-size: 100%;
-		}
-</style>
+        body {
+            background: url(fon.jpg) no-repeat;
+            background-size: 100%;
+        }
 
-  
+        button.gameButton {
+            border-width: 5px;
+            border-color: olive;
+            border-radius: 10px;
+            background-color: palegoldenrod;
+            width: 20%;
+            height: 20%;
+        }
+
+        p.buttonTitle {
+            font-family: Georgia, sans-serif;
+            font-size: 20pt;
+        }
+    </style>
 </head>
+<body onload="i18n.work('ru')">
+<h1 align="center" style="color: white">Dragonfly</h1>
 
+<p style="text-align: center">
+    <button id="newGame" class="gameButton">
+        <p class="buttonTitle i18n">New Game
 
+        <p>
+    </button>
+    <br>
+    <button id="resumeGame" class="gameButton">
+        <p class="buttonTitle i18n">Resume Game
 
-<body>
+        <p>
+    </button>
+</p>
+<script src="lib/lib.js"></script>
+<script src="lib/i18n.js"></script>
+<script src="lib/i18n/ru/intro.js"></script>
+<script src="lib/message.js"></script>
+<script>
+    var newGame = document.getElementById("newGame");
+    var resumeGame = document.getElementById("resumeGame");
 
+    function openNewGame() {
+        localStorage.clear();
+        window.open("game.html", "_self");
+    }
 
+    newGame.onclick = function () {
+        if (localStorage.length > 0) {
+            message.confirm(i18n.translate("Do you want to start new game?"), openNewGame);
+        } else {
+            openNewGame();
+        }
+    };
 
-
-<h1 align = "center"><font color="white"> Dragonfly </font></h1>
-
-
-
-<form action="game.html">
-
- <p style="text-align: center">
-	<select size="1" name="level">
-    <option disabled>Выберите уровень</option>
-    <option value="01" selected>1</option>
-   </select>
-   <br>
-   
-   <input type = "image" src = "start.png" name = "play" value = "play" />
-   
-    </br>
-</form>
-
-
-
-
+    resumeGame.onclick = function(){window.open("game.html", "_self");};
+</script>
 </body>
 </html>

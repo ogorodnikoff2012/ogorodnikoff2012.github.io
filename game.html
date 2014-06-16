@@ -37,7 +37,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="i18n.work('ru')">
 <table align="center">
     <tr>
         <td>
@@ -74,7 +74,7 @@
                     <img src="img/controls/bin.png" style="width: 64px"/>
                 </button>
                 <br>
-                <button id="backspace">
+                <button id="backspace" class="i18n">
                     Remove<br>selected<br>command
                 </button>
             </div>
@@ -91,10 +91,21 @@
 <script src="lib/level.js"></script>
 <script src="lib/coin.js"></script>
 <script src="lib/message.js"></script>
+<script src="lib/i18n.js"></script>
+<script src="lib/i18n/ru/game.js"></script>
+<script src="lib/level_manager.js"></script>
 <script>
-    var l = get("level");
-    loadJS("lib/levels/level_" + l + ".js");
-    loadJS("start.js");
+    i18n.setLanguage("ru");
+
+    var l = levelManager.getNextLevel();
+    if (!l) {
+        message.alert(i18n.translate("You have passed all levels!"), function () {
+            window.open("intro.html", "_self");
+        });
+    } else {
+        loadJS("lib/levels/level_" + l + ".js");
+        loadJS("start.js");
+    }
 </script>
 </body>
 </html>

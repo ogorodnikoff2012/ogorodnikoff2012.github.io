@@ -29,7 +29,7 @@
         }
     </style>
 </head>
-<body onload="i18n.work('ru')">
+<body onload="i18n.work()">
 <h1 align="center" style="color: white">Dragonfly</h1>
 
 <p style="text-align: center">
@@ -50,6 +50,8 @@
 <script src="lib/i18n/ru/intro.js"></script>
 <script src="lib/message.js"></script>
 <script>
+    i18n.setLanguage("ru");
+
 	if(!window.localStorage)
 	{
 		window.localStorage = [];

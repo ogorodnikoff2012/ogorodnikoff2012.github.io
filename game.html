@@ -3,63 +3,8 @@
 <head>
     <title>Dragonfly</title>
     <meta charset='utf-8'/>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style type="text/css">
-        body {
-            /*background-color: rgba(135, 169, 72, 0.59);*/
-            background-image: url("fon 2.png");
-        }
-
-        div.commandDiv, #program {
-            background: white;
-            border: solid 1px black;
-            min-height: 64px;
-        }
-
-        #program {
-            overflow-x: scroll;
-            overflow-y: hidden;
-            min-height: 84px;
-        }
-
-        td.selectedAction {
-            background: cyan;
-        }
-
-        td.currentAction {
-            background: red;
-        }
-
-        div {
-            padding: 0px;
-            margin: 0px;
-        }
-
-        button.gameButton {
-            border-width: 5px;
-            border-color: olive;
-            border-radius: 10px;
-            background-color: palegoldenrod;
-            /*width: 20%;
-            height: 20%;*/
-        }
-
-        #levelIndicator {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            color: white;
-            font-size: 300%;
-            font-style: italic;
-        }
-
-        #moneyIndicator {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            color: white;
-            font-size: 300%;
-            font-style: italic;
-        }
 
     </style>
 </head>
@@ -108,10 +53,13 @@
     <p class="i18n">Main menu</p>
 </button>
 
-<p id="levelIndicator"></p>
+<div class="BLIndicator">
+    <p id="levelIndicator"></p>
+</div>
 
-<p id="moneyIndicator"></p>
-
+<div class="BRIndicator">
+    <p id="moneyIndicator"></p>
+</div>
 
 <script src="lib/lib.js"></script>
 <script src="lib/cell.js"></script>
@@ -131,7 +79,7 @@
 
     var l = levelManager.getNextLevel();
     if (!l) {
-        message.alert(i18n.translate("You have passed all levels!"), function () {
+        message.alert("<h1>" + i18n.translate("You have passed all levels!") + "</h1>", function () {
             window.open("intro.html", "_self");
         });
     } else {

@@ -3,49 +3,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Dragonfly</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style type="text/css">
-        h1 {
-            font-size: 500%;
-            font-style: italic;
-        }
-
-        body {
-            background: url(fon.jpg) no-repeat;
-            background-image: 100%;
-        }
-
-        button.gameButton {
-            border-width: 5px;
-            border-color: olive;
-            border-radius: 10px;
-            background-color: palegoldenrod;
-            width: 20%;
-            height: 20%;
-        }
-
-        p.buttonTitle {
-            font-family: Georgia, sans-serif;
-            font-size: 20pt;
-        }
-
-        #levelIndicator {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            color: white;
-            font-size: 300%;
-            font-style: italic;
-        }
-
-        #moneyIndicator {
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            color: white;
-            font-size: 300%;
-            font-style: italic;
-        }
-
+    button.gameButton {
+        width: 20%;
+        height: 20%;
+    }
     </style>
 </head>
 <body onload="i18n.work()">
@@ -70,9 +33,13 @@
         </p>
     </button>
 </p>
-<p id="levelIndicator"></p>
+<div class="BLIndicator">
+    <p id="levelIndicator"></p>
+</div>
 
-<p id="moneyIndicator"></p>
+<div class="BRIndicator">
+    <p id="moneyIndicator"></p>
+</div>
 
 <script src="lib/lib.js"></script>
 <script src="lib/i18n.js"></script>
@@ -87,9 +54,11 @@
     }
     var newGame = document.getElementById("newGame");
     var resumeGame = document.getElementById("resumeGame");
+    var chooseLevel = document.getElementById("chooseLevel");
 
     function openNewGame() {
         localStorage.clear();
+        localStorage["maxLevel"] = 0;
         window.open("game.html", "_self");
     }
 
@@ -102,8 +71,13 @@
     };
 
     resumeGame.onclick = function () {
+        localStorage["lastLevel"] = localStorage["maxLevel"];
         window.open("game.html", "_self");
     };
+
+    chooseLevel.onclick = function () {
+        window.open("level.html", "_self");
+    }
 
     updateLevelIndicator(true);
     updateMoneyIndicator(true);

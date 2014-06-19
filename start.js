@@ -3,7 +3,7 @@ var fieldWrapper = document.getElementById("fieldWrapper");
 fieldWrapper.style.width = (20 + Math.min(800, level.width * CELL_SIZE.width)) + "px";
 fieldWrapper.style.height = (20 + Math.min(600, level.height * CELL_SIZE.height)) + "px";
 
-if(localStorage["level"] == undefined) {
+if(!localStorage["level"]) {
 	localStorage["level"] = level.player.level = 1;
 } else {
 	level.player.level = +localStorage["level"];

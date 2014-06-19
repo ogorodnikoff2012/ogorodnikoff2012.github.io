@@ -27,6 +27,25 @@
             font-family: Georgia, sans-serif;
             font-size: 20pt;
         }
+
+        #levelIndicator {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 300%;
+            font-style: italic;
+        }
+
+        #moneyIndicator {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            color: white;
+            font-size: 300%;
+            font-style: italic;
+        }
+
     </style>
 </head>
 <body onload="i18n.work()">
@@ -44,18 +63,28 @@
 
         </p>
     </button>
+    <br>
+    <button id="chooseLevel" class="gameButton">
+        <p class="buttonTitle i18n">Choose Level
+
+        </p>
+    </button>
 </p>
+<p id="levelIndicator"></p>
+
+<p id="moneyIndicator"></p>
+
 <script src="lib/lib.js"></script>
 <script src="lib/i18n.js"></script>
 <script src="lib/i18n/ru/intro.js"></script>
 <script src="lib/message.js"></script>
+<script src="lib/level_manager.js"></script>
 <script>
     i18n.setLanguage("ru");
 
-	if(!window.localStorage)
-	{
-		window.localStorage = [];
-	}
+    if (!window.localStorage) {
+        window.localStorage = [];
+    }
     var newGame = document.getElementById("newGame");
     var resumeGame = document.getElementById("resumeGame");
 
@@ -72,7 +101,12 @@
         }
     };
 
-    resumeGame.onclick = function(){window.open("game.html", "_self");};
+    resumeGame.onclick = function () {
+        window.open("game.html", "_self");
+    };
+
+    updateLevelIndicator(true);
+    updateMoneyIndicator(true);
 </script>
 </body>
 </html>

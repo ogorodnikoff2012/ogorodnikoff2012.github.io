@@ -33,6 +33,34 @@
             padding: 0px;
             margin: 0px;
         }
+
+        button.gameButton {
+            border-width: 5px;
+            border-color: olive;
+            border-radius: 10px;
+            background-color: palegoldenrod;
+            /*width: 20%;
+            height: 20%;*/
+        }
+
+        #levelIndicator {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 300%;
+            font-style: italic;
+        }
+
+        #moneyIndicator {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            color: white;
+            font-size: 300%;
+            font-style: italic;
+        }
+
     </style>
 </head>
 <body onload="i18n.work()">
@@ -44,8 +72,8 @@
             </div>
         </td>
         <td>
-            <div style="overflow-y:scroll;" id="availableCommands">
-
+            <div>
+                <div style="overflow-y:scroll; max-width: 84px" id="availableCommands"></div>
             </div>
         </td>
     </tr>
@@ -63,15 +91,12 @@
                 <button id="play" style="background: rgba(0, 0, 0, 0); border-width: 0px">
                     <img src="img/controls/play.png" style="width: 64px"/>
                 </button>
-                <br>
                 <button id="stop" style="background: rgba(0, 0, 0, 0); border-width: 0px">
                     <img src="img/controls/stop.png" style="width: 64px"/>
                 </button>
-                <br>
                 <button id="reset" style="background: rgba(0, 0, 0, 0); border-width: 0px">
                     <img src="img/controls/bin.png" style="width: 64px"/>
                 </button>
-                <br>
                 <button id="backspace" class="i18n">
                     Remove<br>selected<br>command
                 </button>
@@ -79,6 +104,15 @@
         </td>
     </tr>
 </table>
+<button class="gameButton" style="position: absolute; top: 0px; left: 0px" onclick="window.open('intro.html', '_self')">
+    <p class="i18n">Main menu</p>
+</button>
+
+<p id="levelIndicator"></p>
+
+<p id="moneyIndicator"></p>
+
+
 <script src="lib/lib.js"></script>
 <script src="lib/cell.js"></script>
 <script src="lib/actor.js"></script>

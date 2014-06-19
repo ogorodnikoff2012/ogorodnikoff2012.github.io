@@ -17,3 +17,6 @@ loadAvailableCommands();
 loadDragAndDrop();
 initControls();
 level.loadData();
+
+updateLevelIndicator()
+updateMoneyIndicator();

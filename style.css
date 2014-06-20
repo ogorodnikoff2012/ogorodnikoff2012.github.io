@@ -6,6 +6,7 @@ h1 {
 
 body {
     background: url(fon.jpg) no-repeat;
+    background-size: 100%;
 }
 
 button.gameButton {

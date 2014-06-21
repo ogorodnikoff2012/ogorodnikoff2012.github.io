@@ -1,5 +1,5 @@
 Web_GAME
 ========
 
-This is a game
-http://www.w3schools.com/html/html5_draganddrop.asp
+Это игра, предназначенная для обучения детей основам программирования в игровой форме.
+http://1cprogamers.esy.es/

@@ -16,6 +16,12 @@ button.gameButton {
     background-color: palegoldenrod;
 }
 
+
+/*button.gameButton:hover {
+    background-color: purple;
+    border-radius: 30px;
+}*/
+
 button.disabled {
     background-color: darkgray;
     border-color: #000000;
@@ -24,7 +30,7 @@ button.disabled {
 div.BLIndicator, div.BRIndicator {
     border-radius: 10px;
     background: palegoldenrod;
-    position: absolute;
+    position: fixed;
 }
 
 div.BLIndicator {
@@ -69,7 +75,23 @@ td.currentAction {
     background: red;
 }
 
+td.currentAction.selectedAction {
+    background: purple;
+}
+
 div {
     padding: 0px;
     margin: 0px;
 }
+
+/*.a:hover {
+    font-size: 100px;
+}
+
+.b:hover {
+    font-size: 100px;
+}
+
+.c:hover {
+    font-size: 100px;
+}*/

@@ -43,6 +43,10 @@ div.BRIndicator {
     right: 15px;
 }
 
+#msg table {
+    align: center;
+}
+
 p.buttonTitle {
     font-family: Georgia, sans-serif;
     font-size: 20pt;

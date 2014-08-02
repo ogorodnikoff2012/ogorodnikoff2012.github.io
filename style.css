@@ -44,7 +44,7 @@ div.BRIndicator {
 }
 
 #msg table {
-    align: center;
+    text-align: center;
 }
 
 p.buttonTitle {
@@ -55,7 +55,7 @@ p.buttonTitle {
 #levelIndicator, #moneyIndicator {
     font-family: Georgia, sans-serif;
     margin: 5px;
-    font-size: 36pt;
+    font-size: 24pt;
     font-style: italic;
 }
 

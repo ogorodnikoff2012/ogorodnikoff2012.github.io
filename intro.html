@@ -40,41 +40,6 @@
 <script src="lib/i18n/ru/intro.js"></script>
 <script src="lib/message.js"></script>
 <script src="lib/level_manager.js"></script>
-<script>
-    i18n.setLanguage("ru");
-
-    if (!window.localStorage) {
-        window.localStorage = [];
-    }
-    var newGame = document.getElementById("newGame");
-    var resumeGame = document.getElementById("resumeGame");
-    var chooseLevel = document.getElementById("chooseLevel");
-
-    function openNewGame() {
-        localStorage.clear();
-        localStorage["maxLevel"] = 0;
-        window.open("game.html", "_self");
-    }
-
-    newGame.onclick = function () {
-        if (localStorage.length > 0) {
-            message.confirm(i18n.translate("Do you want to start new game?"), openNewGame);
-        } else {
-            openNewGame();
-        }
-    };
-
-    resumeGame.onclick = function () {
-        localStorage["lastLevel"] = localStorage["maxLevel"];
-        window.open("game.html", "_self");
-    };
-
-    chooseLevel.onclick = function () {
-        window.open("level.html", "_self");
-    }
-
-    updateLevelIndicator(true);
-    updateMoneyIndicator(true);
-</script>
+<script src="lib/setup_intro.js"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@
     <p id="moneyIndicator"></p>
 </div>
 
-<button class="gameButton" style="position: absolute; top: 0px; left: 0px" onclick="window.open('intro.html', '_self')">
+<button class="gameButton" style="position: absolute; top: 0; left: 0" onclick="window.open('intro.html', '_self')">
     <p class="i18n">Main menu</p>
 </button>
 
@@ -26,41 +26,6 @@
 <script src="lib/message.js"></script>
 <script src="lib/level_manager.js"></script>
 <script src="lib/table_maker.js"></script>
-<script>
-    i18n.setLanguage("ru");
-
-    var maxLevel = +localStorage["maxLevel"];
-
-    function onClick(i) {
-        return function () {
-            localStorage["lastLevel"] = i;
-            window.open("game.html", "_self");
-        };
-    };
-
-    var tableMaker = new TableMaker(5, document.getElementById("levels"));
-
-    for(var i = 0; i < levelManager.numOfLevels; i++) {
-        var button = document.createElement("button");
-        /*    <button id="resumeGame" class="gameButton">
-         <p class="buttonTitle i18n">Resume Game
-
-         </p>*/
-        addClass(button, "gameButton");
-        if(i > maxLevel) {
-            addClass(button, "disabled");
-            button.setAttribute("disabled", true);
-        }
-        var p = document.createElement("p");
-        addClass(p, "buttonTitle");
-        p.innerHTML = i18n.translate("Level") + " " + (i + 1);
-        button.appendChild(p);
-        button.onclick = onClick(i);
-        tableMaker.addButton(button);
-    }
-
-    //updateLevelIndicator(true);
-    updateMoneyIndicator(true);
-</script>
+<script src="lib/setup_level.js"></script>
 </body>
 </html>

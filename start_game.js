@@ -18,5 +18,5 @@ loadDragAndDrop();
 initControls();
 level.loadData();
 
-updateLevelIndicator()
+updateLevelIndicator();
 updateMoneyIndicator();

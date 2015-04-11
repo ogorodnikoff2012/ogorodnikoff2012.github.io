@@ -38,13 +38,13 @@
     <tr>
         <td style="vertical-align: top">
             <div id="controlPanel">
-                <center><button id="play" style="background: rgba(0, 0, 0, 0); border-width: 0px">
+                <center><button id="play" style="background: rgba(0, 0, 0, 0); border-width: 0">
                     <img src="img/controls/play.png" style="width: 64px"/>
                 </button>
-                <button id="stop" style="background: rgba(0, 0, 0, 0); border-width: 0px">
+                <button id="stop" style="background: rgba(0, 0, 0, 0); border-width: 0">
                     <img src="img/controls/stop.png" style="width: 64px"/>
                 </button>
-                <button id="reset" style="background: rgba(0, 0, 0, 0); border-width: 0px">
+                <button id="reset" style="background: rgba(0, 0, 0, 0); border-width: 0">
                     <img src="img/controls/bin.png" style="width: 64px"/>
                 </button>
                     <br>
@@ -55,7 +55,7 @@
         </td>
     </tr>
 </table>
-<button class="gameButton" style="position: absolute; top: 0px; left: 0px" onclick="window.open('intro.html', '_self')">
+<button class="gameButton" style="position: absolute; top: 0; left: 0" onclick="window.open('intro.html', '_self')">
     <p class="i18n">Main menu</p>
 </button>
 
@@ -90,7 +90,7 @@
         });
     } else {
         includeJS("lib/levels/level_" + l + ".js");
-        includeJS("start.js");
+        includeJS("start_game.js");
     }
 </script>
 </body>
